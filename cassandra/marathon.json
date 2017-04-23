@@ -1,0 +1,31 @@
+{
+    "id": "cassandra",
+    "cpus": 4.0,
+    "mem": 4096.0,
+    "instances": 1,
+    "container": {
+        "type": "DOCKER",
+        "docker": {
+            "forcePullImage": true,
+            "image": "cassandra",
+            "network": "BRIDGE",
+            "portMappings": [
+              { "containerPort": 7199, "hostPort": 0, "servicePort": 0, "protocol": "tcp" },
+              { "containerPort": 7000, "hostPort": 0, "servicePort": 0, "protocol": "tcp" },
+              { "containerPort": 7001, "hostPort": 0, "servicePort": 0, "protocol": "tcp" },
+              { "containerPort": 9042, "hostPort": 0, "servicePort": 0, "protocol": "tcp" },
+              { "containerPort": 9160, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+            ]
+        }
+    },
+    "healthChecks": [
+        {
+            "protocol": "TCP",
+            "portIndex": 3,
+            "timeoutSeconds": 60,
+            "gracePeriodSeconds": 30,
+            "intervalSeconds": 30,
+            "maxConsecutiveFailures": 10
+        }
+    ]
+}

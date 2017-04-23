@@ -1,0 +1,29 @@
+{
+  "mesos": {
+    "master": "zk://master.mesos:2181/mesos"
+  },
+  "elasticsearch": {
+    "framework-name": "elasticsearch",
+    "failover-timeout": "2592000.0",
+    "zookeeper-mesos-timeout": "20000",
+    "port": "31105",
+    "force-pull-image": false,
+    "executor": {
+      "ram": "2048",
+      "cpu": "1.0",
+      "disk": "1024",
+      "instances": "2",
+      "cluster-name": "mesos-ha",
+      "settings-location": "DEFAULT",
+      "health-delay": "1000",
+      "name": "elasticsearch-executor",
+      "timeout": "60000"
+    },
+    "scheduler": {
+      "cpu": "0.2",
+      "ram": "512",
+      "instances": "1",
+      "java-heap": "-Xms128m -Xmx256m"
+    }
+  }
+}

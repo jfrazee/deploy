@@ -1,0 +1,79 @@
+{
+  "service": {
+    "name": "cassandra",
+    "user": "root",
+    "cpus": 0.5,
+    "mem": 2048,
+    "heap": 1024,
+    "api_port": 9000,
+    "placement_strategy": "NODE"
+  },
+  "nodes": {
+    "count": 1,
+    "cpus": 0.5,
+    "mem": 4096,
+    "disk": 10240,
+    "disk_type": "ROOT",
+    "seeds": 2,
+    "heap": {
+      "size": 2048,
+      "new": 100
+    }
+  },
+  "cassandra": {
+    "jmx_port": 7199,
+    "num_tokens": 256,
+    "hinted_handoff_enabled": true,
+    "max_hint_window_in_ms": 10800000,
+    "hinted_handoff_throttle_in_kb": 1024,
+    "max_hints_delivery_threads": 2,
+    "batchlog_replay_throttle_in_kb": 1024,
+    "partitioner": "org.apache.cassandra.dht.Murmur3Partitioner",
+    "key_cache_save_period": 14400,
+    "row_cache_size_in_mb": 0,
+    "row_cache_save_period": 0,
+    "commitlog_sync_period_in_ms": 10000,
+    "commitlog_segment_size_in_mb": 32,
+    "concurrent_reads": 16,
+    "concurrent_writes": 32,
+    "concurrent_counter_writes": 16,
+    "memtable_allocation_type": "heap_buffers",
+    "index_summary_resize_interval_in_minutes": 60,
+    "storage_port": 7000,
+    "start_native_transport": true,
+    "native_transport_port": 9042,
+    "start_rpc": false,
+    "rpc_port": 9160,
+    "rpc_keepalive": true,
+    "thrift_framed_transport_size_in_mb": 15,
+    "tombstone_warn_threshold": 1000,
+    "tombstone_failure_threshold": 100000,
+    "column_index_size_in_kb": 64,
+    "batch_size_warn_threshold_in_kb": 5,
+    "batch_size_fail_threshold_in_kb": 50,
+    "compaction_throughput_mb_per_sec": 16,
+    "sstable_preemptive_open_interval_in_mb": 50,
+    "read_request_timeout_in_ms": 5000,
+    "range_request_timeout_in_ms": 10000,
+    "write_request_timeout_in_ms": 2000,
+    "counter_write_request_timeout_in_ms": 5000,
+    "cas_contention_timeout_in_ms": 1000,
+    "truncate_request_timeout_in_ms": 60000,
+    "request_timeout_in_ms": 10000,
+    "dynamic_snitch_update_interval_in_ms": 100,
+    "dynamic_snitch_reset_interval_in_ms": 600000,
+    "dynamic_snitch_badness_threshold": 0.1,
+    "internode_compression": "all"
+  },
+  "executor": {
+    "cpus": 0.5,
+    "mem": 1024,
+    "heap": 768,
+    "disk": 1024,
+    "api_port": 9001
+  },
+  "task": {
+    "cpus": 0.5,
+    "mem": 256
+  }
+}

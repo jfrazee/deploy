@@ -1,0 +1,29 @@
+{
+    "id": "elasticsearch",
+    "cpus": 1.0,
+    "mem": 2000.0,
+    "instances": 2,
+    "container": {
+        "type": "DOCKER",
+        "docker": {
+            "forcePullImage": true,
+            "image": "elasticsearch",
+            "network": "BRIDGE",
+            "portMappings": [
+                { "containerPort": 9200, "hostPort": 0, "servicePort": 0, "protocol": "tcp" },
+                { "containerPort": 9300, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+            ]
+        }
+    },
+    "healthChecks": [
+        {
+            "protocol": "HTTP",
+            "portIndex": 0,
+            "path": "/",
+            "timeoutSeconds": 20,
+            "gracePeriodSeconds": 20,
+            "intervalSeconds":5,
+            "maxConsecutiveFailures": 10
+        }
+    ]
+}
