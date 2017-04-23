@@ -1,0 +1,33 @@
+{
+    "id": "usergrid-portal",
+    "cpus": 1.0,
+    "mem": 2000.0,
+    "instances": 1,
+    "container": {
+        "type": "DOCKER",
+        "docker": {
+            "forcePullImage": true,
+            "image": "bluesquad/usergrid-portal",
+            "network": "BRIDGE",
+            "portMappings": [
+                { "containerPort": 8000, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+            ]
+        }
+    },
+    "healthChecks": [
+        {
+            "protocol": "HTTP",
+            "portIndex": 0,
+            "path": "/HealthCheck/Health",
+            "timeoutSeconds": 20,
+            "gracePeriodSeconds": 20,
+            "intervalSeconds":5,
+            "maxConsecutiveFailures": 10
+        }
+    ],
+    "labels":{
+        "HAPROXY_GROUP":"external",
+        "HAPROXY_0_VHOST":"portal.bluesquadfortexas.org",
+        "HAPROXY_0_REDIRECT_TO_HTTPS":"false"
+    }
+}
