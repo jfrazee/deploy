@@ -7,10 +7,10 @@ curl -u superuser:password -X PUT $BASEURL/system/database/bootstrap
 curl -u superuser:password -X GET $BASEURL/system/superuser/setup    
 
 # you'll find these by logging into portal as test-organization owner and creating a new organization
-export ORGID="4d4a3c70-2843-11e7-84bf-02420e5c3ca7"
-export APPID="7951e7d6-2843-11e7-84bf-02420e5c3ca7"
-export CLIENTID=""
-export CLIENTSECRET=""
+export ORGID="50da3c74-2baf-11e7-9f08-024209954cb0"
+export APPID="5238ba5f-2baf-11e7-9f08-024209954cb0"
+export CLIENTID="b3U6UNo8dCuvEeefCAJCCZVMsA"
+export CLIENTSECRET="b3U6MJnuMAkvrpwsX2u3DAe3EOJo6c0"
 
 # add roles
 
