@@ -34,9 +34,11 @@ import static org.apache.juneau.html.HtmlDocSerializerContext.HTMLDOC_links;
   },
    children={
      Home.class,
+     Login.class,
      Campaigns.class,
-     Volunteers.class
-  }
+     Volunteers.class,
+     Profile.class
+   }
 )
 public class RootResources extends ResourceGroup {
   private static final long serialVersionUID = 1L;

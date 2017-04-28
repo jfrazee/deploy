@@ -5,7 +5,72 @@
   "extends": {
     "javaType": "org.apache.usergrid.java.client.model.UsergridUser"
   },
+  "additionalProperties": false,
   "properties": {
-
+    "adr": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "addr1": {
+          "type": "string"
+        },
+        "addr2": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        }
+      }
+    },
+    "bday": {
+      "type": "string"
+    },
+    "tel": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "copywriting",
+	      "PR",
+    	  "advertising",
+    	  "software_development",
+  	      "data_science",
+   	      "IT"
+        ]
+      }
+    },
+    "profiles": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "twitterUrl": {
+          "type": "string"
+        },
+        "githubUrl": {
+          "type": "string"
+        },
+        "linkedinUrl": {
+          "type": "string"
+        }
+      }
+    }
   }
 }

@@ -10,7 +10,7 @@
             "image": "bluesquad/usergrid-portal",
             "network": "BRIDGE",
             "portMappings": [
-                { "containerPort": 8000, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+                { "containerPort": 3000, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
             ]
         }
     },

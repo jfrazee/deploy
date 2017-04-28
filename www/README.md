@@ -2,7 +2,7 @@ docker run -d --name=usergrid-www --net=host -p 10000:10000 bluesquad/www
 
 # initialize databases
 
-export BASEURL="http://192.168.99.100:8080"
+export BASEURL="http://192.168.99.100:8000"
 
 curl -u superuser:password -X PUT $BASEURL/system/database/setup
 curl -u superuser:password -X PUT $BASEURL/system/database/bootstrap
